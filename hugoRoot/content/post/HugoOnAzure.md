@@ -1,11 +1,12 @@
 ---
 title: "Hugo on Azure"
 date: 2018-03-19
+description: "Easily run Hugo on Azure with deployment triggered by GitHub commits"
 tags: ["hugo", "azure", "functions", "serverless"]
 draft: true
 ---
 
-### Overview:
+## Overview:
 
 Late last year several other Global Black Belts and I decided to create a podcast series and we were looking for a way to host it. We landed on using Hugo since this was mostly going to be static content and and several of us were already familiar with it.
 
@@ -17,7 +18,7 @@ If you just want to jump to using the template you can get it here:
 
 Now on to how it works. The workflow looks something like this:
 
-### Why not just use Azure Storage like you would on AWS S3?
+## Why not just use Azure Storage like you would on AWS S3?
 
 Azure Storage is perfect for hosting the static content for incredibly cheap if you set the permissing such that the blobs are publicly readable, but there are a few things that keep you from simply using Azure Storage for the whole thing.
 
@@ -27,15 +28,15 @@ Azure Storage is perfect for hosting the static content for incredibly cheap if 
 
 1. There is no CI/CD with GitHub directly in Storage (This one applies to AWS S3 too). So you have to use something Like Jenkins, VSTS, Azure Automation, Functions or some other tool to push the file to storage when there is new content to be published.
 
-### What I Implemented
+## What I Implemented
 
-### CDN
+## CDN
 
 CDN can be used to help with the first two points above. It can point to the container as the root for the site and. with Azure Premium CDN, it can even use a rewrite rule to provide basic default document capability. One drawback to Azure CDN though is that you cannot set up the rewrite rules at deployment time nor and changes to the rules can take several hours to take effect.
 
 With this in mind we use Azure Standard CDN. which allows us to push the files as close to the users as possible minimizing the delivery time to the users.
 
-### Function
+## Function
 
 In comes Azure Functions to save the day, and nicely resolve the remaining items.
 
@@ -120,9 +121,9 @@ In comes Azure Functions to save the day, and nicely resolve the remaining items
 
 * One additional feature is that I am able to host my backend APIs such as search on the same Azure Function using the same domain.
 
-### How to use it
+## How to use it
 
 
-### Wrap Up
+## Wrap Up
 
 This is far from the only way to publish a static Hugo site on Azure, but it has been working extrememly well and all for pennies a month. I hope not only this template is helpful, but also the walk-though of why I selected the components I did. I'd love to hear any recommendations folks have for how this could be optimized.

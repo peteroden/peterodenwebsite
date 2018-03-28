@@ -1,11 +1,13 @@
-baseURL = "http://www.peteroden.com/"
+baseURL = "https://www.peteroden.com/"
 languageCode = "en-us"
-title = "Pete Roden"
+title = "Pete Roden's Site"
 theme = "minimal"
 # disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = ""
 applicationInsights = ""
 relativeURLs = true
+enableRobotsTXT = true
+canonifyURLs = true
 
 [params]
     author = "Pete Roden"
