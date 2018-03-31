@@ -1,0 +1,43 @@
+<div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+    {{ if .Site.Menus.main }}
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+              {{ range sort .Site.Menus.main }}
+                  <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                  </li>
+              {{ end }}
+      </ul>
+    {{ end }}
+    </div>
+
+  </div>
+
+  <!--
+  {{ if .Site.Menus.main }}
+  <ul class="nav navbar-nav">
+      {{ range sort .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+  </ul>
+{{ end }}
+-->
+
+
+{{ if .Site.Menus.icon }}
+  <ul class="social-media-icons">
+      {{ range sort .Site.Menus.icon }}
+        <li class="navbar-icon">
+          <a href="{{ .URL }}">
+            <i class="fa fa-{{ .Name }}"></i>
+            <span class="screen-reader-text">{{.Name}}</span>
+          </a>
+        </li>
+      {{ end }}
+  </ul>
+{{ end }}
+</div>

@@ -2,11 +2,13 @@
 title: "Hugo on Azure"
 date: 2018-03-19
 description: "Easily run Hugo on Azure with deployment triggered by GitHub commits"
+image: "media/images/gohugo.png"
+categories: ["azure","web"]
 tags: ["hugo", "azure", "functions", "serverless"]
 draft: true
 ---
 
-## Overview:
+## Overview
 
 Late last year several other Global Black Belts and I decided to create a podcast series and we were looking for a way to host it. We landed on using Hugo since this was mostly going to be static content and and several of us were already familiar with it.
 

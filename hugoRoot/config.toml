@@ -1,7 +1,7 @@
 baseURL = "https://www.peteroden.com/"
 languageCode = "en-us"
-title = "Pete Roden's Site"
-theme = "minimal"
+title = "Pete Roden"
+theme = "hugo-nederburg-theme"
 # disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = ""
 applicationInsights = ""
@@ -10,6 +10,12 @@ enableRobotsTXT = true
 canonifyURLs = true
 
 [params]
+
+    slogan = "Azure Ninja"
+    copyright = "&copy;2018 Pete Roden"
+    email = "pete.roden@live.com"
+    # authorLink = "https://peteroden.com/"
+    # bio = ["Pretty awesome dude" ]
     author = "Pete Roden"
     profilePic = "/media/images/headshot.png"
     description = "Azure Ninja"
@@ -22,6 +28,10 @@ canonifyURLs = true
     highlight = true
     highlightStyle = "github"
     highlightLanguages = ["javascript", "markdown", "cpp", "cs", "go", "haskell", "kotlin", "python", "swift"]
+
+  #[[params.navlinks]]
+  #name = "Get in touch"
+  #url = "contact/"
 
 [[menu.main]]
     url = "/"
@@ -58,11 +68,11 @@ canonifyURLs = true
     weight = 3
 
 [[menu.icon]]
-    url = "https://azureninjas.cloud"
+    url = "https://www.azureninjas.cloud/"
     name = "podcast"
     weight = 4
 
-[[menu.icon]]
-    url = "/resume"
-    name = "briefcase"
-    weight = 5
+#[[menu.icon]]
+#    url = "/resume"
+#    name = "briefcase"
+#    weight = 5

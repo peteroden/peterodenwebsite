@@ -1,49 +1,92 @@
-{{ partial "header" . }}
+{{ define "body" }}
 
-<main>
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+  {{ end }} {{ define "main" }}
+  <div id="loop-container" class="loop-container">
+    {{ if and (isset .Params "image") .Params.image }}
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
 
-    <div class="item">
+      <div class='featured-image lazy lazy-bg-image' data-background="{{ .Params.image | absURL }}">
+      </div>
+      {{ else }}
 
-        {{ $.Scratch.Set "link" .RelPermalink }}
-        {{ with .Params.repo }}
-            {{ printf "%s" . | $.Scratch.Set "link"}}
+      <div class="post type-post status-publish format-standard hentry category-standard category-travel entry full-without-featured odd excerpt-1">
+
         {{ end }}
-        {{ with .Params.link }} {{ $.Scratch.Set "link" . }} {{ end }}
-    
-        {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") | $.Scratch.Set "subtitle" }}
-        {{ with .Description }} {{ $.Scratch.Set "subtitle" . }} {{ end }}
-    
-        <h1>{{ .Title }}</h1>
-        <h5>{{ $.Scratch.Get "subtitle" }}</h5>
-        <!--
-        {{ range .Params.tags }}
-        <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><kbd class="item-tag">{{ . }}</kbd></a>
-        {{ end }}
-        -->
-    
+        <div class="entry-meta">
+          <span class="date">{{ .Date.Format "January 02" }}</span>
+          <span> / </span>
+
+          <span class="author">
+            {{ if and (isset .Site.Params "authorlink") .Site.Params.authorLink }}
+            <a href="{{ .Site.Params.authorLink | default " " | absURL}}" title="Posts by {{ .Site.Params.author | default " " }}" rel="author">{{ .Site.Params.author | default ""}}</a>
+            {{ else }} {{ .Site.Params.author | default "" }} {{ end }}
+          </span>
+
+
+          {{ range .Params.categories }}
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories{{ . | relURL }}">{{ . }}</a>
+          </span>
+          {{ end }}
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> {{ .Title }}</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              {{ .Content }}
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                <a href="{{ " /categories/ " | relLangURL }}{{ $name | urlize }}" title="View all posts in {{ $name }}">{{ $name }}</a>{{ end }}
+              </p>
+            </div>
+
+
+
+            <div class="entry-tags">
+              <p>
+                <span>Tags</span>
+                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <a href="{{ " /tags/ " | relLangURL }}{{ $name | urlize }}" title="View all posts tagged {{ $name }}">{{ $name }}</a>
+                {{ end }}
+
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+
+            <div class="author">
+                <img alt='{{ .Site.Params.author | default "" }}' src="https://www.gravatar.com/avatar/{{ md5  .Site.Params.email | default "" }}?s=100&d=identicon" class='avatar avatar-72 photo' height='72' width='72'>
+
+              <span>
+                Written by: <a href="{{ .Site.Params.authorLink | default "" | absURL}}" title="Posts by {{ .Site.Params.author | default "" }}" rel="author">{{ .Site.Params.author | default "" }}</a>
+              </span>
+            </div>
+            <div class="bio">
+              {{ range .Site.Params.bio }}
+              <p>{{ . | default "" | safeHTML }}</p>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="comments" class="comments">
+        {{ template "_internal/disqus.html" . }}
+      </section>
     </div>
 
-    <br> <div class="text-justify">{{ .Content }}</div>
 
-    <!-- related posts with the same tags -->
-    {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
-
-    {{ if $related }}
-
-        <h4 class="page-header">Related</h4>
-
-        {{ range $related }} {{ partial "list-item" . }} {{ end }}
 
     {{ end }}
-
-    {{ if and .Site.DisqusShortname (not .Params.disableComments) }}
-
-        <h4 class="page-header">Comments</h4>
-
-        {{ template "_internal/disqus.html" . }}
-
-    {{ end }}
-
-</main>
-
-{{ partial "footer.html" . }}

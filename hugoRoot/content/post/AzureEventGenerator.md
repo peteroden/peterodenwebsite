@@ -1,9 +1,11 @@
 ---
 title: "Azure Event Generator"
-date: 2018-03-26
+date: 2018-03-30
 description: "Event generation tool for all the Azure messaging services running entirely serverless"
+image: "media/images/binary.jpg"
+categories: ["Azure"]
 tags: ["Azure", "Event Grid", "Event Hub", "Service Bus", "Queue", "Serverless", "Durable Function"]
-draft: true
+draft: false
 ---
 
 ## Why
@@ -25,8 +27,8 @@ It has a SPA webpage that is served by same the Function App to provide a GUI to
 There are a few of ways you can use this:
 
 * The easiest way is to just go to [https://aka.ms/eventgen](https://aka.ms/eventgen) and use the tool there pointed at your messaging endpoint.
-* I have also published the source out on GitHub, so you can grab the code and deploy it on your own Azure subscription and customize it to your heart's content. The repo is [here](https://github.com/codingwithsasquatch/AzreEventGenerator).
+* I have also published the source out on GitHub, so you can grab the code and deploy it on your own Azure subscription and customize it to your heart's content. The repo is [here](https://github.com/codingwithsasquatch/AzureEventGenerator).
 
 ## Feedback
 
-As always, I welcome any feedback you have, especially pull requests and issues. And I hope you ind this tool useful.
+As always, I welcome any feedback you have, especially pull requests and issues. I hope you find this tool useful.
