@@ -1,6 +1,6 @@
 [submodule "hugoRoot/themes/minimal"]
 	path = hugoRoot/themes/minimal
 	url = https://github.com/calintat/minimal.git
-[submodule "themes/split"]
-	path = themes/split
-	url = https://github.com/christianmendoza/hugo-split-theme.git
+[submodule "hugoRoot/themes/hugo-nederburg-theme"]
+	path = hugoRoot/themes/hugo-nederburg-theme
+	url = https://github.com/appernetic/hugo-nederburg-theme.git
