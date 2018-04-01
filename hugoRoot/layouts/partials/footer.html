@@ -1,6 +1,5 @@
 <footer id="site-footer" class="site-footer" role="contentinfo">
     <div class="design-credit">
-		<p>
-			Nederburg Hugo Theme by <a target="_blank" href="https://appernetic.io">Appernetic</a>.</p><p>A port of Tracks by Compete Themes.</p>
+				<p>{{ .Site.Params.copyright | default "&copy; All rights reserved." | markdownify }}</p>
 	</div>
 </footer>
