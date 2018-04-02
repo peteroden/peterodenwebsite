@@ -20,6 +20,7 @@ page = "/:slug/"
     # authorLink = "https://peteroden.com/"
     # bio = ["Pretty awesome dude" ]
     author = "Pete Roden"
+    favicon = "/favicon.ico"
     profilePic = "/media/images/headshot.png"
     description = "Azure Ninja"
     githubUsername = "peteroden"

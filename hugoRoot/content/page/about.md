@@ -11,4 +11,4 @@ My name is Pete Roden and this in my blog. I am an Azure Ninja at Microsoft on t
 
 On this blog I will share the projects. architectures,etc. that I am working on and hope they help you with your own projects.
 
-Thanks for Visiting!
+Thanks for visiting!
