@@ -8,9 +8,9 @@ tags: ["Azure", "Event Grid", "Event Hub", "Service Bus", "Queue", "Serverless",
 draft: false
 ---
 
-## Why
-
 A few months back, several of my colleagues and I were putting together a workshop on how to design and run serverless applications on Azure. One scenario we wanted to demonstrate was processing real-time event streams. But we had an issue, we needed a source. Being that this was a workshop all about serverless, I set out to create a tool entirely serverless that generated events that we could then process. I call this tool Azure Event Generator. It is a pretty generic tool and is pretty useful for a a slew of applications, so I thought I would walk through what it is, how it works and how you can use it.
+
+![picture of tool](/media/images/eventgen.png "Azure Event Generator")
 
 ## What it does
 
