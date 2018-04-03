@@ -77,7 +77,7 @@ page = "/:slug/"
     name = "podcast"
     weight = 4
 
-#[[menu.icon]]
-#    url = "/resume"
-#    name = "briefcase"
-#    weight = 5
+[[menu.icon]]
+    url = "/resume"
+    name = "briefcase"
+    weight = 5

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pete Roden | Cloud Solution Architect | peroden@microsoft.com</title>
+    <link rel="stylesheet" type="text/css" href="lib/reset-fonts-grids.css" media="all" /> 
+    <link rel="stylesheet" type="text/css" href="lib/resume.css" media="all" />
+  </head>
+  <body>
+    <link type="image/x-icon" rel="icon" href="favicon.ico">
+    <div id="doc2" class="yui-t7">
+      <div id="inner"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+    <script>
+        var converter = new showdown.Converter();
+        var xmlhttp = new XMLHttpRequest();
+        var md;
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                md = xmlhttp.responseText;
+                document.getElementById("inner").innerHTML = converter.makeHtml( md );
+            }
+        }
+        xmlhttp.open("GET", "PeteRoden-Resume.md", true);
+        xmlhttp.send();
+    </script>
+  </body>
+</html>
