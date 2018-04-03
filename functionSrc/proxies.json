@@ -120,6 +120,12 @@
             },
             "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{name}.md"
         },
+        "rootPdf": {
+            "matchCondition": {
+                "route": "/{name}.pdf"
+            },
+            "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{name}.pdf"
+        },
         "level1Html": {
             "matchCondition": {
                 "route": "/{level1}/{name}.html"
@@ -203,6 +209,12 @@
                 "route": "/{level1}/{name}.md"
             },
             "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{level1}/{name}.md"
+        },
+        "level1Pdf": {
+            "matchCondition": {
+                "route": "/{level1}/{name}.pdf"
+            },
+            "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{level1}/{name}.pdf"
         },
         "level2Html": {
             "matchCondition": {
@@ -288,6 +300,12 @@
             },
             "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{level1}/{level2}/{name}.md"
         },
+        "level2Pdf": {
+            "matchCondition": {
+                "route": "/{level1}/{level2}/{name}.pdf"
+            },
+            "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{level1}/{level2}/{name}.pdf"
+        },
         "level3Html": {
             "matchCondition": {
                 "route": "/{level1}/{level2}/{level3}/{name}.html"
@@ -372,6 +390,12 @@
             },
             "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{level1}/{level2}/{level3}/{name}.md"
         },
+        "level3Pdf": {
+            "matchCondition": {
+                "route": "/{level1}/{level2}/{level3}/{name}.pdf"
+            },
+            "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{level1}/{level2}/{level3}/{name}.pdf"
+        },
         "level4Html": {
             "matchCondition": {
                 "route": "/{level1}/{level2}/{level3}/{level4}/{name}.html"
@@ -455,6 +479,12 @@
                 "route": "/{level1}/{level2}/{level3}/{level4}/{name}.md"
             },
             "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{level1}/{level2}/{level3}/{level4}/{name}.md"
+        },
+        "level4Pdf": {
+            "matchCondition": {
+                "route": "/{level1}/{level2}/{level3}/{level4}/{name}.pdf"
+            },
+            "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{level1}/{level2}/{level3}/{level4}/{name}.pdf"
         }
     }
 }
