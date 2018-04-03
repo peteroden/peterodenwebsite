@@ -7,7 +7,7 @@
 
 <div class="yui-u" markdown>
 
-### [pete.roden@live.com](pete.roden@live.com)
+### [pete.roden@live.com](mailto:pete.roden@live.com)
 
 ### (513) 288-5661
 
