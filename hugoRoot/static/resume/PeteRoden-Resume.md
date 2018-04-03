@@ -13,7 +13,7 @@
 
 ### [http:///peteroden.com](http://peteroden.com)
 
-### [Download PDF](resume.pdf)
+### [Download PDF](/resume/resume.pdf)
 
 </div>
 
