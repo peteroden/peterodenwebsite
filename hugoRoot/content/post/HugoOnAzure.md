@@ -1,6 +1,6 @@
 ---
 title: "Hugo on Azure"
-date: 2018-04-5
+date: 2018-04-05
 description: "Easily run Hugo on Azure with deployment triggered by GitHub commits"
 image: "/media/images/hugoOnAzure/gohugo.png"
 categories: ["azure", "web"]
