@@ -44,11 +44,12 @@
             </article>
           </div>
           <div class='entry-meta-bottom'>
+            <!--
             <div class="entry-categories">
               <p>
                 <span>Categories</span>
                 {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-                <a href="{{ " /categories/ " | relLangURL }}{{ $name | urlize }}" title="View all posts in {{ $name }}">{{ $name }}</a>{{ end }}
+                <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" title="View all posts in {{ $name }}">{{ $name }}</a>{{ end }}
               </p>
             </div>
 
@@ -58,11 +59,12 @@
               <p>
                 <span>Tags</span>
                 {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                <a href="{{ " /tags/ " | relLangURL }}{{ $name | urlize }}" title="View all posts tagged {{ $name }}">{{ $name }}</a>
+                <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="View all posts tagged {{ $name }}">{{ $name }}</a>
                 {{ end }}
 
               </p>
             </div>
+            -->
           </div>
           <div class="author-meta">
 
