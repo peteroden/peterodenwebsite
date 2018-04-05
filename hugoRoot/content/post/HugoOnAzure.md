@@ -24,11 +24,11 @@ Now on to how it works. The workflow looks something like this:
 
 So if you have implement a static site on another cloud like AWS, you may be asking why we don't just use raw Azure Blob Storage like you would with AWS S3? Well, Azure Storage is perfect for hosting the static content for incredibly cheap if you set the permissions such that the blobs are publicly readable, but there are a few things that keep you from simply using Azure Storage for the whole thing.
 
-* First and probably the most painful item, is that there is no default document capability and requires all blobs to exist in a container ( basically a sub-directory). This is the top most requested feature for the storage team and has been for a couple years now, but it still isn't available. It's coming, but still not available yet. Feel free to pile on and vote for it here. [here](https://feedback.azure.com/forums/217298-storage/suggestions/6417741-static-website-hosting-in-azure-blob-storage).
+* First and probably the most painful item, is that there is no default document capability and requires all blobs to exist in a container ( basically a sub-directory). This is the top most requested feature for the storage team and has been for a couple years now, but it still isn't available. It's coming, but still not available yet. Feel free to pile on and vote for it [here](https://feedback.azure.com/forums/217298-storage/suggestions/6417741-static-website-hosting-in-azure-blob-storage).
 
 * The other issue for my scenario is that there is no CI/CD with GitHub directly in Storage (This one applies to AWS S3 too). So you have to use something Like Jenkins, VSTS, Azure Automation, Functions or some other tool to push the file to storage when there is new content to be published. But I wanted this to be something that folks can use without having to set up any infrastructure. I wanted to have something that you could just deploy via an ARM template with a few configuration settings and have a working site.
 
-## Here's how my the components of my template works
+## Here's how my template works:
 
 ### CDN
 
