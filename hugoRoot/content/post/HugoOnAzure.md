@@ -8,7 +8,7 @@ tags: ["hugo", "azure", "functions", "serverless", "static site", "JAMstack"]
 draft: false
 ---
 
-Late last year several other Global Black Belts and I decided to create a podcast series and we were looking for a way to host it. We landed on using Hugo since this was mostly going to be static content and and several of us were already familiar with it.
+Late last year several other Global Black Belts and I decided to create a podcast series [https://www.azureninjas.cloud](https://www.azureninjas.cloud) and we were looking for a way to host it. We landed on using Hugo since this was mostly going to be static content and and several of us were already familiar with it.
 
 I really wanted to minimize the infrastructure we needed to manage just to host the site, so I really wanted to build this all using serverless products in Azure. So I set out to figure out the best way to accomplish this. I wound up with a CDN sitting in front of blob storage. But this still meant that we had to manually deploy our content anytime there was content that changed. I really wanted to get a simple deployment pipeline, so I created an Azure Function that was triggered on GitHub commits of the source content.
 
