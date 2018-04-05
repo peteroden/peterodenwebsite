@@ -78,7 +78,7 @@
             },
             "backendUri": "https://%storageAccountName%.blob.core.windows.net/public/{name}.svg"
         },
-        "rootMmp3": {
+        "rootMp3": {
             "matchCondition": {
                 "route": "/{name}.mp3"
             },
