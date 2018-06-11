@@ -5,7 +5,7 @@ description: "Deploy Azure SignalR Service with ARM template with an Azure Funct
 image: "/media/images/signalr.png"
 categories: ["azure"]
 tags: ["azure", "functions", "serverless", "signalr"]
-draft: true
+draft: false
 ---
 
 If you're like me the new Azure SignalR Service announced at Build is really interesting especially in regard to Serverless. So I've been doing some work with Azure SignalR Service and Azure Functions using Anthony Chu's custom extension (https://github.com/anthonychu/AzureAdvocates.WebJobs.Extensions.SignalRService). However, I really like to provide ARM templates along with my code in repos so others can deploy it and check it out with out having to manually deploy a bunch of services, but I couldn't find documentation anywhere for how to deploy SignalR Service via ARM template. So I set out to figure it out on my own and wanted to share what I learned. This creates the SignalR Service, Storage Account and Function App. It also populates the "AzureSignalRConnectionString" App Setting used to pass in the connection string for the SignalR Service connection string used by the extension.
